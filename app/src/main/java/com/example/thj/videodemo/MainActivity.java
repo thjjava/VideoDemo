@@ -22,6 +22,7 @@ public class MainActivity extends Activity {
     RadioButton radioStream;
     RadioButton radioFile;
     MediaController mediaController;
+    int i;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {

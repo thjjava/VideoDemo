@@ -1,0 +1,105 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    tools:context=".VideoViewDemo">
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="视频播放"
+        android:id="@+id/textView"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:textIsSelectable="false"
+        android:layout_alignParentBottom="false"
+        android:gravity="center_horizontal" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/url"
+        android:layout_below="@+id/textView"
+        android:layout_alignParentTop="false"
+        android:layout_alignParentLeft="true"
+        android:text="http://101.95.49.76:8589/ISMPGroupManager/js/movie.mp4"
+        android:layout_alignRight="@+id/textView"
+        android:layout_alignEnd="@+id/textView" />
+
+    <RadioGroup
+        android:id="@+id/radioGroup1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_below="@+id/url"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="false">
+
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:text="Url"
+            android:id="@+id/radioButtonStream"
+            android:layout_below="@+id/url"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:checked="false"
+            android:layout_alignBottom="@+id/start_play" />
+
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:text="File"
+            android:id="@+id/radioButtonFile"
+            android:checked="false"
+            android:layout_alignBottom="@+id/radioButtonStream"
+            android:layout_toRightOf="@+id/radioButtonStream"
+            android:layout_below="@+id/url" />
+    </RadioGroup>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="播放"
+        android:id="@+id/start_play"
+        android:layout_below="@+id/url"
+        android:layout_toRightOf="@+id/radioGroup1"
+        android:layout_toEndOf="@+id/radioGroup1" />
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="暂停"
+        android:id="@+id/start_pause"
+        android:layout_below="@+id/url"
+        android:layout_alignBottom="@+id/start_play"
+        android:layout_toRightOf="@+id/start_play"
+        android:layout_toEndOf="@+id/start_play" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="停止"
+        android:id="@+id/start_stop"
+        android:layout_above="@+id/rtsp_player"
+        android:layout_toRightOf="@+id/start_pause"
+        android:layout_toEndOf="@+id/start_pause" />
+
+    <VideoView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/rtsp_player"
+        android:layout_below="@+id/start_play"
+        android:layout_alignRight="@+id/url"
+        android:layout_alignEnd="@+id/url" />
+
+</RelativeLayout>
